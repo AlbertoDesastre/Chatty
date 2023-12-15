@@ -15,6 +15,9 @@ public class User {
 	private String token;
 	private String password;
 
+	public User() {
+	}
+	
 	public User(String email, 
 			String username, 
 			String avatar, 
