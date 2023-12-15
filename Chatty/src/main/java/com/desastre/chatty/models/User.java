@@ -1,8 +1,15 @@
 package com.desastre.chatty.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class User {
-	private String email;
+	@Id
 	private String username;
+    @Indexed(unique=true) // a User with the same email can't be repeated
+	private String email;
 	private String avatar;
 	private String description;
 	private String token;
@@ -22,6 +29,20 @@ public class User {
 		this.token = token;
 		this.password = password;
 	}
+	
+	public User(String email, 
+			String avatar, 
+			String description, 
+			String token, 
+			String password) {
+		super();
+		this.email = email;
+		this.avatar = avatar;
+		this.description = description;
+		this.token = token;
+		this.password = password;
+	}
+
 
 	public String getEmail() {
 		return email;
