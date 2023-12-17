@@ -53,7 +53,7 @@ public class ChattyApplication {
 	}
 
 	private void insertStudentMongoTemplateAndQuery(UserRepository userRepository, MongoTemplate mongoTemplate) {
-		String email = "email@email.com";
+		String email = "email4@email.com";
 		User user = new User(email,
 				"my avatar", 
 				"crazy description", 
